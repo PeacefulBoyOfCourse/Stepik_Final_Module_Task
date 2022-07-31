@@ -1,5 +1,6 @@
 from .base_page import BasePage
-from .pages.locators import LoginPageLocators
+from selenium.webdriver.common.by import By
+from .locators import LoginPageLocators
 
 
 class LoginPage(BasePage):
@@ -12,7 +13,7 @@ class LoginPage(BasePage):
         assert 'login' in self.browser.current_url
 
     def should_be_login_form(self):
-        assert self.browser.is_element_present(*LoginPageLocators.LOGIN_FORM), "Login form doesn't present on the page"
+        assert self.is_element_present(*LoginPageLocators.LOGIN_FORM), "Login form doesn't present on the page"
 
     def should_be_register_form(self):
-        assert self.browser.is_element_present(*LoginPageLocators.REGISTER_FORM), "Register form doesn't present on the page"
+        assert self.is_element_present(*LoginPageLocators.REGISTER_FORM), "Register form doesn't present on the page"

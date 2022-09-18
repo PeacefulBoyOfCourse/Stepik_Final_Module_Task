@@ -18,7 +18,7 @@ def browser(request):
     if browser_name == "chrome":
         print("\nstart chrome browser for test..")
         options = Options()
-        # options.add_argument('headless')  # активировать для запуска UI-прогонов
+        # options.add_argument('headless')  # активировать для запуска прогонов без использования UI
         options.add_experimental_option('excludeSwitches', ['enable-logging'])
         options.add_experimental_option('prefs', {'intl.accept_languages': language})
         browser = webdriver.Chrome(options=options)
